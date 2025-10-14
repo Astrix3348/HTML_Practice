@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>SignIn</title>
+    <link rel="stylesheet" href="sign-up.css" />
+  </head>
+
+  <body>
+    <div id="main">
+      <form action="Home.html" method="post" enctype="multipart/form-data">
+        <label>Email:</label>
+        <input
+          id="pass"
+          type="email"
+          placeholder="Enter your email"
+          name="email"
+          required
+        />
+        <br />
+
+        <label>Password:</label>
+        <input
+          type="password"
+          placeholder="Enter your password"
+          name="password"
+          required
+        />
+        <br />
+        <label>Gender : </label>
+        <input type="radio" name="gender" value="male" required /> Male
+        <input type="radio" name="gender" value="female" required /> Female
+        <br />
+        <button class="btn" type="submit">Login</button>
+        <br />
+        <a id="anchor" href="Sign-in.html">Already have an account?</a>
+      </form>
+    </div>
+  </body>
+</html>
