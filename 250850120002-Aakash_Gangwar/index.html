@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      .skill {
+        display: inline-block;
+        background-color: black;
+        color: white;
+        margin: 3px;
+      }
+      .skill span {
+        background-color: red;
+        color: white;
+        cursor: pointer;
+        margin-left: 5px;
+        font-weight: bold;
+      }
+
+      #skillContainer {
+        border: 2px solid red;
+        width: 300px;
+        height: 300px;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="input-container" style="margin-bottom: 8px">
+      <label for="skillinput">Skill</label>
+      <input type="text" id="inputSkill" placeholder="Enter Skill" />
+      <button id="addbtn">Add</button>
+    </div>
+    <div id="skillContainer"></div>
+    <script>
+      const input = document.getElementById("inputSkill");
+      const skills = document.getElementById("skillContainer");
+      const addBtn = document.getElementById("addbtn");
+
+      function addSKill() {
+        if (input.value.trim() !== "") {
+          let box = document.createElement("div");
+          box.className = "skill";
+          box.innerHTML = input.value + "<span>X</span>";
+          skills.appendChild(box);
+          input.value = "";
+
+          box.querySelector("span").onclick = function () {
+            box.remove();
+          };
+        }
+      }
+
+      input.addEventListener("keypress", function (e) {
+        if (e.key === "Enter") {
+          addSKill();
+        }
+      });
+
+      addBtn.addEventListener("click", addSKill);
+    </script>
+  </body>
+</html>
